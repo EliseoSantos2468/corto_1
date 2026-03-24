@@ -1,0 +1,5 @@
+CREATE TABLE pizarras(
+	id SERIAL PRIMARY KEY,
+	ubicacion VARCHAR(50) NOT NULL,
+	estado VARCHAR(50) NOT NULL
+);
