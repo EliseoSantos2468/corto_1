@@ -146,9 +146,15 @@ docker logs postgresdb
 
 ![Modelo entidad-relación de la base de datos](img/corto_1.png)
 
-## Nota técnica destacada
+## Nota técnica
 
-Términos prácticos:
+En términos prácticos:
 
 - Los índices reducen el costo de búsqueda en columnas frecuentes de filtrado.
 - `ANALYZE` actualiza estadísticas para que el optimizador estime mejor cuántas filas devolverá una consulta.
+
+## Integrantes
+
+- Eliseo Antonio Santos Diaz
+- Edras Ariel Viera Lazo
+
