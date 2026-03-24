@@ -25,10 +25,6 @@
 -- 2.3 Automatización mediante Triggers y PL/pgSQL
 \i docker-entrypoint-initdb.d/V1_20260323_create_trigger_cambio_estado.sql
 
---AFTER: Para garantizar que la pizarra cambie a 'En Reparación' solo si el reporte de fallo se guardó con éxito en el sistema
---FOR EACH ROW: Porque necesitamos procesar la lógica fila por fila para identificar de forma individual qué pizarra_id 
---específico acaba de reportar el fallo y actualizar únicamente esa
-
 -- Módulo 2: Modificación y Evolución del Esquema
 
 --3.1. Alteración de Tablas (ALTER TABLE)
@@ -48,9 +44,12 @@
 -- Creacion de analize para reporte_fallos
 \i docker-entrypoint-initdb.d/V1_20260323_create_analyze_reporte_fallos.sql
 
---VACUUM: Recupera el espacio físico en el disco al limpiar las "tuplas muertas"
---ANALYZE: Refresca los metadatos de la tabla para que el motor sepa exactamente cómo están distribuidos los datos
-
 --5. Módulo 4: Documentación y Metadatos (Catálogo)
 -- Agregar comentarios a tablas y columnas para mejorar la documentación interna de la base de datos
 \i docker-entrypoint-initdb.d/V1_20260323_create_comments.sql
+
+--insertar datos a la base de datos
+\i docker-entrypoint-initdb.d/V1_20260324_insert_data.sql
+
+--crear view para ver detalles de los reportes
+\i docker-entrypoint-initdb.d/V1_20260324_create_view_ver_reportes.sql
