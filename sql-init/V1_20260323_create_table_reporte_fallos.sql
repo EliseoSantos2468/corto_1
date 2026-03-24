@@ -1,0 +1,5 @@
+CREATE TABLE reporte_fallos(
+	id SERIAL PRIMARY KEY,
+	fecha DATE DEFAULT CURRENT_DATE,
+	descripcion VARCHAR(50) NOT NULL
+);
